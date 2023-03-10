@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'admin',
-  //   pathMatch: 'prefix',
-  // },
+  {
+    path: '',
+    redirectTo: 'user',
+    pathMatch: 'prefix',
+  },
   {
     path: 'admin',
     loadChildren: () =>
@@ -17,10 +17,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./@features/user/user.module').then((m) => m.UserModule),
   },
-  // {
-  //   path: '**',
-  //   redirectTo: '',
-  // },
+  {
+    path: '**',
+    redirectTo: 'user',
+  },
 ];
 
 @NgModule({

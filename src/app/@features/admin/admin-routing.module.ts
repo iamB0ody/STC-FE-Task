@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminLayoutComponent } from 'src/app/@core/layout/admin-layout/admin-layout.component';
 
 const routes: Routes = [
   {
@@ -9,8 +10,14 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    loadChildren: () =>
-      import('./products/products.module').then((m) => m.ProductsModule),
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./products/products.module').then((m) => m.ProductsModule),
+      },
+    ],
   },
   {
     path: '**',

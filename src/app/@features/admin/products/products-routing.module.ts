@@ -20,11 +20,7 @@ const routes: Routes = [
   {
     path: 'edit/:productId',
     component: ProductsFormPage
-  },
-  {
-    path: '**',
-    redirectTo: 'list',
-  },
+  }
 ];
 
 @NgModule({

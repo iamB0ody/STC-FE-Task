@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductsService } from 'src/app/@shared/services/products/products.service';
 
 @Component({
   selector: 'app-products-list',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class ProductsListPage {
 
-  constructor
+  constructor(private productsService: ProductsService){
+    this.getProducts()
+  }
+
+  getProducts(){
+    this.productsService.getAll().subscribe({
+      next: (rsp) => console.log(rsp)
+    })
+  }
 
 }

@@ -4,8 +4,23 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user',
+    redirectTo: '',
     pathMatch: 'prefix',
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./@features/user/user.module').then((m) => m.UserModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./@core/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./@core/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'admin',
@@ -13,13 +28,8 @@ const routes: Routes = [
       import('./@features/admin/admin.module').then((m) => m.AdminModule),
   },
   {
-    path: 'user',
-    loadChildren: () =>
-      import('./@features/user/user.module').then((m) => m.UserModule),
-  },
-  {
     path: '**',
-    redirectTo: 'user',
+    redirectTo: '',
   },
 ];
 

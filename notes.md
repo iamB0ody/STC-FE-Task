@@ -15,23 +15,23 @@
 ✅ --- Add new product
 ✅ --- Edit product
 ✅ --- delete product
-🧑‍💻 -- User
-🧑‍💻 --- Show categories
-🧑‍💻 --- under each category show the avilable products
+✅ -- User
+✅ --- Show categories
+✅ --- under each category show the avilable products
 🧑‍💻 --- Filters section
-🧑‍💻 --- Add loading
+✅ --- Add loading
 ✅ --- Changeing the products list with animation
-🧑‍💻 --- Show full data for every product card
+✅ --- Show full data for every product card
 
 ✅ -- Last angular version
 ✅ -- Angular material
 ✅ -- Sass
-🧑‍💻 -- Impressive user interface
-🧑‍💻 -- Responsive design
+✅ -- Impressive user interface
+✅ -- Responsive design
 ✅ -- Localization (Ar - En)
 🧑‍💻 -- State management
 ✅ -- APIs -> https://fakestoreapi.com/
-🧑‍💻 -- imple, clear, readable code
+✅ -- imple, clear, readable code
 🧑‍💻 -- Server worker’s feature
 🧑‍💻 Code accompanies the Unit Tests.
 🧑‍💻 Usage is clearly mentioned in the README file, This including setup the

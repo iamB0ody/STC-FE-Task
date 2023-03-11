@@ -3,32 +3,31 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserLayoutComponent } from 'src/app/@core/layout/user-layout/user-layout.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'home',
-  //   pathMatch: 'prefix',
-  // },
   {
-    path: 'home',
-    component: UserLayoutComponent,
-    children: [
-      {
-        path:'',
-        loadChildren: () =>
-          import('./home/home.module').then((m) => m.HomeModule),
-      },
-    ],
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'prefix',
   },
   {
-    path: 'product',
+    path: '',
     component: UserLayoutComponent,
     children: [
       {
-        path:'',
-        loadChildren: () =>
-          import('./product/product.module').then((m) => m.ProductModule),
+        path: 'home',
+          loadChildren: () =>
+            import('./home/home.module').then((m) => m.HomeModule),
       },
-    ],
+      {
+        path: 'category',
+          loadChildren: () =>
+            import('./category/category.module').then((m) => m.CategoryModule),
+      },
+      {
+        path: 'product',
+          loadChildren: () =>
+            import('./product/product.module').then((m) => m.ProductModule),
+      }
+    ]
   }
 ];
 

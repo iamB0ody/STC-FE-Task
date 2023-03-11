@@ -5,6 +5,6 @@ import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [UserLayoutComponent],
-  imports: [SharedModule, UserRoutingModule],
+  imports: [SharedModule, UserRoutingModule]
 })
 export class UserModule {}

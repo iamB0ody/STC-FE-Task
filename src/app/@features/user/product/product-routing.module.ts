@@ -4,7 +4,7 @@ import { ProductPage } from './pages/product/product.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':productId',
     component: ProductPage
   }
 ];

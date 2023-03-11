@@ -1,35 +1,79 @@
 <mat-toolbar color="primary">
   <ng-container *ngIf="isAdmin">
     <mat-icon>dashboard</mat-icon>
-    <span>{{'titles.Admin' | translate}}</span>
+    <span>{{ "titles.Admin" | translate }}</span>
     <ul>
       <li>
-        <a [routerLink]="['/admin/products']" routerLinkActive="link-active" >{{'titles.productsList' | translate}}</a>
+        <a [routerLink]="['/admin/products']" routerLinkActive="link-active">{{
+          "titles.productsList" | translate
+        }}</a>
       </li>
     </ul>
   </ng-container>
 
   <ng-container *ngIf="!isAdmin">
     <mat-icon>home</mat-icon>
-    <span>{{'titles.Welcome' | translate}}</span>
+    <span>{{ "titles.Welcome" | translate }}</span>
     <ul>
       <li>
-        <a [routerLink]="['/user/home']" routerLinkActive="link-active" >{{'titles.Home' | translate}}</a>
+        <a [routerLink]="['/user/home']" routerLinkActive="link-active">{{
+          "titles.Home" | translate
+        }}</a>
       </li>
       <li *ngFor="let cat of categories">
-        <a [routerLink]="['/user/category/' , cat]" routerLinkActive="link-active" >{{cat}}</a>
+        <a
+          [routerLink]="['/user/category/', cat]"
+          routerLinkActive="link-active"
+          >{{ cat }}</a
+        >
       </li>
     </ul>
   </ng-container>
 
   <span class="spacer"></span>
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <ng-container *ngIf="!isAdmin">
+    <button
+      class="mobile-menu"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="mobile-menu-content">
+      <button mat-menu-item [routerLink]="['/user/home']" routerLinkActive="link-active">
+        {{
+          "titles.Home" | translate
+        }}
+      </button>
+
+      <button
+        mat-menu-item
+        [routerLink]="['/user/category/', cat]"
+        routerLinkActive="link-active"
+        *ngFor="let cat of categories"
+      >
+        {{ cat }}
+      </button>
+    </mat-menu>
+  </ng-container>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
     <mat-icon>language</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item [disabled]="languageService.currentLang === lang.key" *ngFor="let lang of languageService.languages" (click)="languageService.changeLang(lang.key)">
+    <button
+      mat-menu-item
+      [disabled]="languageService.currentLang === lang.key"
+      *ngFor="let lang of languageService.languages"
+      (click)="languageService.changeLang(lang.key)"
+    >
       <mat-icon>language</mat-icon>
-      <span>{{lang.name}}</span>
+      <span>{{ lang.name }}</span>
     </button>
     <!-- <button mat-menu-item [disabled]="languageService.currentLang === 'en'" (click)="languageService.changeLang('en')">
       <mat-icon>language</mat-icon>

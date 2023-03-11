@@ -1,5 +1,5 @@
 <div class="row">
-  <mat-form-field appearance="fill" class="col-md-4">
+  <mat-form-field appearance="fill" class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
     <mat-label>{{'labels.categories' | translate}}</mat-label>
     <mat-select (selectionChange)="selectCategory($event)" multiple>
       <mat-option *ngFor="let category of categories" [value]="category">
@@ -8,7 +8,7 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" class="col-md-4">
+  <mat-form-field appearance="fill" class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
     <mat-label>{{'labels.rate' | translate}}</mat-label>
     <mat-select (selectionChange)="selectRate($event)" multiple>
       <mat-option *ngFor="let rate of rates" [value]="rate">
@@ -17,7 +17,7 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" class="col-md-4">
+  <mat-form-field appearance="fill" class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
     <mat-label>{{'labels.pricerange' | translate}}</mat-label>
     <input class="hidden" matInput type="number" />
     <mat-slider

@@ -29,4 +29,18 @@ mat-toolbar {
       }
     }
   }
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  mat-toolbar {
+    ul {
+      display: none;
+    }
+    .mobile-menu {
+      display: inline-block;
+    }
+  }
 }

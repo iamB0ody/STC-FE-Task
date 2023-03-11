@@ -13,7 +13,6 @@ import { StorageService } from 'src/app/@core/services/storage/storage.service';
 })
 export class LoginPage {
   loginForm: FormGroup = new FormGroup({});
-  submited: boolean = false;
 
   role!: string;
 
@@ -47,7 +46,6 @@ export class LoginPage {
   }
 
   onSubmit(): void {
-    this.submited = true;
     if (this.isFormValid(this.loginForm)) {
       this.authService.login({
         username: 'mor_2314',

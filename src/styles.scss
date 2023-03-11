@@ -10,14 +10,34 @@ body {
 body {
   margin: 0;
   // font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, button, input, ul, li, mat-error {
-  font-family: 'Cairo', sans-serif !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea,
+ul,
+li,
+span,
+label,
+table tr th,
+table tr td,
+mat-error,
+simple-snack-bar > div {
+  font-family: "Cairo", sans-serif !important;
   letter-spacing: unset !important;
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+simple-snack-bar > div {
+  text-align: center;
 }

@@ -1,29 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminLayoutComponent } from 'src/app/@core/layout/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from '../layout/auth-layout/auth-layout.component';
 import { LoginPage } from './pages/login/login.page';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'prefix',
+    redirectTo: 'user',
+    pathMatch: 'full',
   },
   {
     path: '',
     component: AuthLayoutComponent,
     children: [
       {
-        path: 'login',
-        component: LoginPage
+        path: '',
+        redirectTo: 'user',
+        pathMatch: 'full',
       },
-
+      {
+        path: 'user',
+        component: LoginPage,
+      },
+      {
+        path: 'admin',
+        component: LoginPage,
+      },
     ],
   },
   {
     path: '**',
-    redirectTo: 'user/login',
+    redirectTo: 'user',
   },
 ];
 

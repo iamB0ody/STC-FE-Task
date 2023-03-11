@@ -1,1 +1,85 @@
-<p>products-form works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>
+        <ng-container *ngIf="!productId"> Add new product </ng-container>
+        <ng-container *ngIf="productId"> Edit product </ng-container>
+      </h1>
+    </div>
+  </div>
+  <mat-card class="row">
+    <mat-card-content class="col-md-12">
+      <form class="row" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="col-md-6">
+          <input
+            matInput
+            placeholder="Product Title"
+            formControlName="title"
+            name="title"
+            required
+          />
+          <mat-error *ngIf="productForm.controls['title'].invalid"
+            >Title is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="col-md-6">
+          <input
+            matInput
+            type="number"
+            placeholder="Product Price"
+            formControlName="price"
+            name="price"
+            required
+          />
+          <mat-error *ngIf="productForm.controls['price'].invalid"
+            >Please provide a valid price</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="col-md-6">
+          <input
+            matInput
+            type="url"
+            placeholder="Product Image"
+            formControlName="image"
+            name="image"
+            required
+          />
+          <mat-error *ngIf="productForm.controls['image'].invalid"
+            >Please provide a valid image url</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="col-md-6">
+          <input
+            matInput
+            type="text"
+            placeholder="Product Category"
+            formControlName="category"
+            name="category"
+            required
+          />
+          <mat-error *ngIf="productForm.controls['category'].invalid"
+            >Category is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="col-md-12">
+          <textarea
+            matInput
+            placeholder="Product Description"
+            formControlName="description"
+            name="description"
+            required
+          ></textarea>
+          <mat-error *ngIf="productForm.controls['description'].invalid"
+            >Description is required</mat-error
+          >
+        </mat-form-field>
+        <div class="col-md-12">
+          <button mat-raised-button color="primary">
+            <ng-container *ngIf="!productId"> Create </ng-container>
+            <ng-container *ngIf="productId"> Update </ng-container>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

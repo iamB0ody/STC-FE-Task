@@ -43,6 +43,6 @@ const materialModules = [
   declarations: [],
   imports: [...materialModules],
   exports: [materialModules],
-  providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 25000, horizontalPosition: 'center', verticalPosition: 'top'}}]
+  providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500, horizontalPosition: 'center', verticalPosition: 'top'}}]
 })
 export class MaterialModule {}

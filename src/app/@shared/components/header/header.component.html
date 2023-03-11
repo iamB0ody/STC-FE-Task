@@ -9,7 +9,7 @@
     <span>Welcome</span>
     <ul>
       <li>
-        <a [routerLink]="['/user/home']" routerLinkActive="link-active" >Home</a>
+        <a [routerLink]="['/user/home']" routerLinkActive="link-active" >{{'titles.Home' | translate}}</a>
       </li>
       <li *ngFor="let cat of categories">
         <a [routerLink]="['/user/category/' , cat]" routerLinkActive="link-active" >{{cat}}</a>
@@ -18,6 +18,19 @@
   </ng-container>
 
   <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [disabled]="this.languageService.currentLang === 'ar'" (click)="languageService.changeLang('ar')">
+      <mat-icon>language</mat-icon>
+      <span>Arabic</span>
+    </button>
+    <button mat-menu-item [disabled]="this.languageService.currentLang === 'en'" (click)="languageService.changeLang('en')">
+      <mat-icon>language</mat-icon>
+      <span>English</span>
+    </button>
+  </mat-menu>
   <button
     mat-icon-button
     class="example-icon favorite-icon"

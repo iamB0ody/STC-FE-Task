@@ -27,7 +27,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
-      defaultLanguage: 'en',
+      // defaultLanguage: 'ar',
       useDefaultLang: true,
     }),
     MatProgressSpinnerModule,

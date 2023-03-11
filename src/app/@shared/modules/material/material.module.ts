@@ -10,8 +10,7 @@ import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/materia
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSliderModule} from '@angular/material/slider';
-
-
+import {MatMenuModule} from '@angular/material/menu';
 
 const materialModules = [
   MatToolbarModule,
@@ -24,9 +23,9 @@ const materialModules = [
   MatSnackBarModule,
   MatProgressBarModule,
   MatPaginatorModule,
-  MatSliderModule
+  MatSliderModule,
   // FlexLayoutModule,
-  // MatMenuModule,
+  MatMenuModule,
   // MatSlideToggleModule,
   // MatOptionModule,
   // MatGridListModule,
@@ -36,6 +35,6 @@ const materialModules = [
   declarations: [],
   imports: [...materialModules],
   exports: [materialModules],
-  providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500, horizontalPosition: 'center', verticalPosition: 'top'}}]
+  providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 20500, horizontalPosition: 'center', verticalPosition: 'top'}}]
 })
 export class MaterialModule {}

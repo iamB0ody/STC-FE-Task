@@ -5,6 +5,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
 import { AuthService } from 'src/app/@core/services/auth/auth.service';
+import { LanguageService } from 'src/app/@core/services/language/language.service';
 import { StorageService } from 'src/app/@core/services/storage/storage.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class LoginPage {
     private storageService: StorageService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private translateService: TranslateService
+    private languageService: LanguageService
   ) {
     this.initForm();
   }
@@ -57,7 +58,7 @@ export class LoginPage {
           this.storageService.set('token', rsp.token);
           this.storageService.set('role', this.role);
           this.router.navigate([this.role])
-          this.snackBar.open(this.translateService.instant('messages.successLogin'));
+          this.snackBar.open(this.languageService.trans('messages.successLogin'));
         },
       });
     }else {

@@ -7,6 +7,14 @@
   <ng-container *ngIf="!isAdmin">
     <mat-icon>home</mat-icon>
     <span>Welcome</span>
+    <ul>
+      <li>
+        <a [routerLink]="['/user/home']" routerLinkActive="link-active" >Home</a>
+      </li>
+      <li *ngFor="let cat of categories">
+        <a [routerLink]="['/user/category/' , cat]" routerLinkActive="link-active" >{{cat}}</a>
+      </li>
+    </ul>
   </ng-container>
 
   <span class="spacer"></span>

@@ -1,4 +1,32 @@
 mat-toolbar {
   gap: 10px;
   margin-bottom: 25px;
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0 5px;
+    margin-inline-start: 20px;
+    li {
+      list-style: none;
+      a {
+        padding: 10px;
+        font-size: 15px;
+        color: white;
+        text-transform: capitalize;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transition: all 0.3s ease-in-out;
+          color: var(--bs-indigo);
+          text-decoration-color: var(--bs-indigo);
+          background-color: white;
+        }
+        &.link-active {
+          color: var(--bs-indigo);
+          text-decoration-color: var(--bs-indigo);
+          background-color: white;
+        }
+      }
+    }
+  }
 }

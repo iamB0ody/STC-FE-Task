@@ -8,6 +8,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../components/header/header.component';
+import { RouterModule } from '@angular/router';
+import { BarRatingModule } from "ngx-bar-rating";
+
 
 const importAndExportComponents = [HeaderComponent]
 
@@ -17,6 +20,8 @@ const importAndExportModule = [
   MaterialModule,
   ReactiveFormsModule,
   NgOptimizedImage,
+  RouterModule,
+  BarRatingModule
 ];
 
 @NgModule({

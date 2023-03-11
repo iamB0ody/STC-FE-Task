@@ -8,6 +8,8 @@ import { AuthService } from 'src/app/@core/services/auth/auth.service';
 })
 export class HeaderComponent {
   @Input() isAdmin: boolean = false;
+  @Input() categories: string[] = [];
+
   constructor(private authService: AuthService) {}
 
   logout() {

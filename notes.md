@@ -18,7 +18,7 @@
 ✅ -- User
 ✅ --- Show categories
 ✅ --- under each category show the avilable products
-🧑‍💻 --- Filters section
+✅ --- Filters section
 ✅ --- Add loading
 ✅ --- Changeing the products list with animation
 ✅ --- Show full data for every product card

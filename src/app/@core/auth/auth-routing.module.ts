@@ -9,25 +9,36 @@ const routes: Routes = [
     redirectTo: 'user',
     pathMatch: 'full',
   },
+
   {
     path: '',
     component: AuthLayoutComponent,
     children: [
       {
         path: '',
-        redirectTo: 'user',
-        pathMatch: 'full',
-      },
-      {
-        path: 'user',
         component: LoginPage,
-      },
-      {
-        path: 'admin',
-        component: LoginPage,
-      },
+      }
     ],
   },
+  // {
+  //   path: '',
+  //   component: AuthLayoutComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       redirectTo: 'user',
+  //       pathMatch: 'full',
+  //     },
+  //     {
+  //       path: 'user',
+  //       component: LoginPage,
+  //     },
+  //     {
+  //       path: 'admin',
+  //       component: LoginPage,
+  //     },
+  //   ],
+  // },
   {
     path: '**',
     redirectTo: 'user',

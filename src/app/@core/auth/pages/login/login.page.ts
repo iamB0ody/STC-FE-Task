@@ -15,7 +15,7 @@ export class LoginPage {
   loginForm: FormGroup = new FormGroup({});
   submited: boolean = false;
 
-  currentRole!: string;
+  role!: string;
 
   constructor(
     private authService: AuthService,
@@ -25,7 +25,6 @@ export class LoginPage {
     private router: Router
   ) {
     this.initForm();
-    this.handleRole()
   }
 
   ngOnInit(): void {}
@@ -37,39 +36,33 @@ export class LoginPage {
     });
   }
 
-  handleRole(){
-    if (this.router.url.includes('admin')) {
-      this.currentRole = 'admin';
-    } else if (this.router.url.includes('user')) {
-      this.currentRole = 'user';
+  isFormValid(form: FormGroup){
+    const roles = ['user', 'admin']
+    const username = form.controls['username'].value;
+    const password = form.controls['password'].value;
+    if(roles.includes(username) && username === password){
+      this.role = roles.find(r => r === username) || '';
+      return true;
     }
-  }
-
-  setStaticCred() {
-    this.loginForm.patchValue({
-      username: 'mor_2314',
-      password: '83r5^_',
-    });
+    return false;
   }
 
   onSubmit(): void {
     this.submited = true;
-    this.setStaticCred();
-    if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).subscribe({
+    if (this.isFormValid(this.loginForm)) {
+      this.authService.login({
+        username: 'mor_2314',
+        password: '83r5^_',
+      }).subscribe({
         next: (rsp) => {
-          const role = this.currentRole;
           this.storageService.set('token', rsp.token);
-          this.storageService.set('role', role);
-          if(role === 'admin'){
-            this.router.navigate(['admin'])
-          }
-          if(role === 'user'){
-            this.router.navigate(['user'])
-          }
+          this.storageService.set('role', this.role);
+          this.router.navigate([this.role])
           this.snackBar.open('success');
         },
       });
+    }else {
+      this.loginForm.reset()
     }
   }
 }

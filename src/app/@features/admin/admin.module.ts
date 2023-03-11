@@ -9,4 +9,6 @@ import { AdminRoutingModule } from './admin-routing.module';
   declarations: [AdminLayoutComponent],
   imports: [AdminRoutingModule]
 })
-export class AdminModule { }
+export class AdminModule {
+
+}

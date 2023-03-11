@@ -4,11 +4,11 @@ import { ProductsFormPage } from './pages/products-form/products-form.page';
 import { ProductsListPage } from './pages/products-list/products-list.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'list',
-    pathMatch: 'prefix',
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'list',
+  //   pathMatch: 'prefix',
+  // },
   {
     path: 'list',
     component: ProductsListPage

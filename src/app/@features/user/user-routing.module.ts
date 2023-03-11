@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserLayoutComponent } from 'src/app/@core/layout/user-layout/user-layout.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'prefix',
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'prefix',
+  // },
   {
     path: 'home',
     component: UserLayoutComponent,

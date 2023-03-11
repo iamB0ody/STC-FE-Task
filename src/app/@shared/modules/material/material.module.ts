@@ -12,6 +12,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
+
 
 
 const materialModules = [
@@ -27,7 +33,10 @@ const materialModules = [
   MatSlideToggleModule,
   MatSelectModule,
   MatOptionModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatGridListModule,
+  MatProgressBarModule,
+  MatPaginatorModule
 ];
 
 @NgModule({

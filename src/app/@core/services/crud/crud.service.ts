@@ -41,21 +41,21 @@ export abstract class CrudService {
     return this.apiService.post(`${this.apiUrl}${url ? '/' + url : ''}`, data);
   }
 
-  updateOne(url: string, data: any, id: string) {
+  updateOne(url: string, data: any, id: number) {
     return this.apiService.put(
       `${this.apiUrl}${url ? '/' + url : ''}/${id}`,
       data
     );
   }
 
-  patchOne(url: string, data: any, id: string) {
+  patchOne(url: string, data: any, id: number) {
     return this.apiService.patch(
       `${this.apiUrl}${url ? '/' + url : ''}/${id}`,
       data
     );
   }
 
-  deleteOne(url: string, id: string, all?: any[]) {
+  deleteOne(url: string, id: number, all?: any[]) {
     return this.apiService.delete(
       `${this.apiUrl}${url ? '/' + url : ''}/${id}`
     );

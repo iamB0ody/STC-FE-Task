@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from 'src/app/@core/layout/admin-layout/admin-layout.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'products',
-  //   pathMatch: 'prefix',
-  // },
+  {
+    path: '',
+    redirectTo: 'products',
+    pathMatch: 'full',
+  },
   {
     path: 'products',
     component: AdminLayoutComponent,

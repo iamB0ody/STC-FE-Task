@@ -21,7 +21,6 @@ export class LoginPage {
     private authService: AuthService,
     private storageService: StorageService,
     private snackBar: MatSnackBar,
-    private activatedRoute: ActivatedRoute,
     private router: Router
   ) {
     this.initForm();

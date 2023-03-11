@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/@core/services/language/language.service';
 import { enterAnimation } from 'src/app/@shared/animations/enter.animation';
 import { rowsAnimation } from 'src/app/@shared/animations/row.animation';
 import { Product } from 'src/app/@shared/interfaces/product/product.interface';
@@ -31,7 +32,8 @@ export class ProductsListPage {
   constructor(
     private productsService: ProductsService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private languageService: LanguageService
   ) {
     this.getProducts();
   }
@@ -60,7 +62,7 @@ export class ProductsListPage {
     this.dataSource.data = this.dataSource.data.filter((p) => p.id !== id);
     this.productsService.deleteOne('', id).subscribe({
       next: (rsp) => {
-        this.snackBar.open('success');
+        this.snackBar.open(this.languageService.trans('messages.successLogin'));
       },
     });
   }

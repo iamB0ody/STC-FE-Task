@@ -8,6 +8,7 @@ import { Product } from 'src/app/@shared/interfaces/product/product.interface';
   styleUrls: ['./products-with-filters.component.scss'],
 })
 export class ProductsWithFiltersComponent {
+  @Input() loading: boolean = false;
   @Input() set products(products: Product[]){
     this.productsList = products;
     this._products = products;

@@ -1,12 +1,17 @@
 <mat-toolbar color="primary">
   <ng-container *ngIf="isAdmin">
     <mat-icon>dashboard</mat-icon>
-    <span>Admin</span>
+    <span>{{'titles.Admin' | translate}}</span>
+    <ul>
+      <li>
+        <a [routerLink]="['/admin/products']" routerLinkActive="link-active" >{{'titles.productsList' | translate}}</a>
+      </li>
+    </ul>
   </ng-container>
 
   <ng-container *ngIf="!isAdmin">
     <mat-icon>home</mat-icon>
-    <span>Welcome</span>
+    <span>{{'titles.Welcome' | translate}}</span>
     <ul>
       <li>
         <a [routerLink]="['/user/home']" routerLinkActive="link-active" >{{'titles.Home' | translate}}</a>
@@ -22,14 +27,14 @@
     <mat-icon>language</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item [disabled]="this.languageService.currentLang === 'ar'" (click)="languageService.changeLang('ar')">
+    <button mat-menu-item [disabled]="languageService.currentLang === lang.key" *ngFor="let lang of languageService.languages" (click)="languageService.changeLang(lang.key)">
       <mat-icon>language</mat-icon>
-      <span>Arabic</span>
+      <span>{{lang.name}}</span>
     </button>
-    <button mat-menu-item [disabled]="this.languageService.currentLang === 'en'" (click)="languageService.changeLang('en')">
+    <!-- <button mat-menu-item [disabled]="languageService.currentLang === 'en'" (click)="languageService.changeLang('en')">
       <mat-icon>language</mat-icon>
       <span>English</span>
-    </button>
+    </button> -->
   </mat-menu>
   <button
     mat-icon-button

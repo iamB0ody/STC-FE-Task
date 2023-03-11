@@ -11,6 +11,7 @@ import { ProductsService } from 'src/app/@shared/services/products/products.serv
 export class CategoryProductsPage {
   categoryName!: string;
   products: Product[] = [];
+  loading: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,9 +33,11 @@ export class CategoryProductsPage {
   }
 
   getProductsByCategory(categoryName: string) {
+    this.loading = true;
     this.productsService.getAll(`category/${categoryName}`).subscribe({
       next: (rsp) => {
         this.products = rsp;
+        this.loading = false;
       },
     });
   }

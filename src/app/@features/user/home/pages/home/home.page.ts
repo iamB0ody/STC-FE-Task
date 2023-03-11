@@ -10,15 +10,18 @@ import { ProductsService } from 'src/app/@shared/services/products/products.serv
 })
 export class HomePage {
   products: Product[] = [];
+  loading: boolean = false;
 
   constructor(private productsService: ProductsService) {
     this.getProducts();
   }
 
   getProducts() {
+    this.loading = true;
     this.productsService.getAll().subscribe({
       next: (rsp) => {
         this.products = rsp;
+        this.loading = false;
       },
     });
   }

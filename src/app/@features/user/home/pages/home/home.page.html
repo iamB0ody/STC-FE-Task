@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <h1>Home</h1>
+      <h1>{{'titles.Home' | translate}}</h1>
     </div>
   </div>
-  <app-products-with-filters [products]="products"></app-products-with-filters>
+  <app-products-with-filters [products]="products" [loading]="loading"></app-products-with-filters>
 </div>

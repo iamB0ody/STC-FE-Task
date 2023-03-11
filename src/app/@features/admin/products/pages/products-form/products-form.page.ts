@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LanguageService } from 'src/app/@core/services/language/language.service';
 import { ProductsService } from 'src/app/@shared/services/products/products.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class ProductsFormPage {
     private productsService: ProductsService,
     private snackBar: MatSnackBar,
     private router: Router,
+    private languageService: LanguageService,
     private activatedRoute: ActivatedRoute
   ) {
     this.initForm();
@@ -40,29 +42,40 @@ export class ProductsFormPage {
 
   handleRouter() {
     this.activatedRoute.params.subscribe((p) => {
-      if(p['productId']){
+      if (p['productId']) {
         this.productId = +p['productId'];
-        this.getProduct(this.productId)
+        this.getProduct(this.productId);
       }
     });
   }
 
-  getProduct(id: number){
+  getProduct(id: number) {
     this.productsService.getOne(id).subscribe({
       next: (rsp) => {
-        this.productForm.patchValue(rsp)
-      }
-    })
+        this.productForm.patchValue(rsp);
+      },
+    });
   }
 
   onSubmit() {
     if (this.productForm.valid) {
-      const request = this.productId ? this.productsService.updateOne('', this.productForm.value, this.productId) : this.productsService.addOne('', this.productForm.value)
+      const request = this.productId
+        ? this.productsService.updateOne(
+            '',
+            this.productForm.value,
+            this.productId
+          )
+        : this.productsService.addOne('', this.productForm.value);
 
-      request
-      .subscribe({
+      request.subscribe({
         next: (rsp) => {
-          this.snackBar.open('success');
+          this.snackBar.open(
+            this.languageService.trans(
+              this.productId
+                ? 'messages.productupdatedsuccessfuly'
+                : 'messages.productcreatedsuccessfully'
+            )
+          );
           this.router.navigate(['admin/products']);
         },
       });

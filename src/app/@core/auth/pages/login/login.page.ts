@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
 import { AuthService } from 'src/app/@core/services/auth/auth.service';
 import { StorageService } from 'src/app/@core/services/storage/storage.service';
@@ -20,7 +21,8 @@ export class LoginPage {
     private authService: AuthService,
     private storageService: StorageService,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private translateService: TranslateService
   ) {
     this.initForm();
   }
@@ -55,7 +57,7 @@ export class LoginPage {
           this.storageService.set('token', rsp.token);
           this.storageService.set('role', this.role);
           this.router.navigate([this.role])
-          this.snackBar.open('success');
+          this.snackBar.open(this.translateService.instant('messages.successLogin'));
         },
       });
     }else {

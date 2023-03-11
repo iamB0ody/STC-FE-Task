@@ -1,1 +1,22 @@
-{}
+{
+  "titles": {
+    "login": "تسجيل الدخول",
+    "Admin": "لوحة التحكم",
+    "Welcome": "مرحبا",
+    "Home": "الرئيسية"
+  },
+  "validations": {
+    "Pleaseprovideavalidusername": "يرجى تقديم اسم مستخدم صالح",
+    "Pleaseprovideavalidpassword": "الرجاء إدخال كلمة مرور صالحة"
+  },
+  "placeholders": {
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور"
+  },
+  "buttons": {
+    "Login": "تسجيل الدخول"
+  },
+  "messages": {
+    "successLogin": "تم تسجيل الدخول بنجاح"
+  }
+}

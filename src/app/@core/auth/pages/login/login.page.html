@@ -2,16 +2,16 @@
   <mat-card>
     <mat-card-content>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <h2>Log In</h2>
+        <h2>{{'titles.login'| translate}}</h2>
         <mat-form-field>
-          <input matInput placeholder="Username" formControlName="username" name="username" required>
-          <mat-error *ngIf="loginForm.controls['username'].invalid">Please provide a valid username</mat-error>
+          <input matInput [placeholder]="'placeholders.username' | translate" formControlName="username" name="username" required>
+          <mat-error *ngIf="loginForm.controls['username'].invalid">{{'validations.Pleaseprovideavalidusername' | translate}}</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="password" placeholder="Password" formControlName="password" name="password" required>
-          <mat-error *ngIf="loginForm.controls['password'].invalid">Please provide a valid password</mat-error>
+          <input matInput type="password" [placeholder]="'placeholders.password' | translate" formControlName="password" name="password" required>
+          <mat-error *ngIf="loginForm.controls['password'].invalid">{{'validations.Pleaseprovideavalidpassword' | translate}}</mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary">Login</button>
+        <button mat-raised-button color="primary">{{'buttons.Login' | translate}}</button>
       </form>
     </mat-card-content>
   </mat-card>

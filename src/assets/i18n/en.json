@@ -1,1 +1,19 @@
-{}
+{
+  "titles": {
+    "login": "Log In"
+  },
+  "validations": {
+    "Pleaseprovideavalidusername": "Please provide a valid username",
+    "Pleaseprovideavalidpassword": "Please provide a valid password"
+  },
+  "placeholders": {
+    "username": "Username",
+    "password": "Password"
+  },
+  "buttons": {
+    "Login": "Login"
+  },
+  "messages": {
+    "successLogin": "Login Success"
+  }
+}

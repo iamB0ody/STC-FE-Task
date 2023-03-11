@@ -3,9 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-mat-card {
-  min-width: 400px;
-}
-mat-form-field {
-  display: block;
+.spacer {
+  flex: 1 1 auto;
 }

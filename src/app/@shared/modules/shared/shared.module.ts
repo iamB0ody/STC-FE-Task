@@ -4,11 +4,12 @@ import {
   NgOptimizedImage,
   PRECONNECT_CHECK_BLOCKLIST,
 } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { HeaderComponent } from '../../components/header/header.component';
+
+const importAndExportComponents = [HeaderComponent]
 
 const importAndExportModule = [
   CommonModule,
@@ -19,9 +20,9 @@ const importAndExportModule = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [...importAndExportComponents],
   imports: [...importAndExportModule],
-  exports: [...importAndExportModule, TranslateModule],
+  exports: [...importAndExportModule, ...importAndExportComponents, TranslateModule],
   providers: [
     {
       provide: PRECONNECT_CHECK_BLOCKLIST,

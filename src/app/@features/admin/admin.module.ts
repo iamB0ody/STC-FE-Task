@@ -7,7 +7,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 
 @NgModule({
   declarations: [AdminLayoutComponent],
-  imports: [AdminRoutingModule]
+  imports: [SharedModule, AdminRoutingModule]
 })
 export class AdminModule {
 

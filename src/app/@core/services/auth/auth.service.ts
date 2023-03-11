@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginRequest } from 'src/app/@shared/interfaces/login-req/login-req.interface';
 import { LoginResponse } from 'src/app/@shared/interfaces/login-res/login-res.interface';
@@ -11,10 +12,15 @@ import { StorageService } from '../storage/storage.service';
 export class AuthService {
   readonly apiUrl: string = `/auth/login`;
 
-  constructor(private apiService: ApiService, private storageService: StorageService) { }
+  constructor(private apiService: ApiService, private storageService: StorageService, private router: Router) { }
 
   login(data: LoginRequest): Observable<LoginResponse> {
     return this.apiService.post(this.apiUrl, data)
+  }
+
+  logout(){
+    this.storageService.clear()
+    this.router.navigate(['login'])
   }
 
   isLoggedIn() : boolean{

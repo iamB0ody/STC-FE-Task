@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <ng-container *ngIf="isAdmin">
+    <mat-icon>dashboard</mat-icon>
+    <span>Admin</span>
+  </ng-container>
+
+  <ng-container *ngIf="!isAdmin">
+    <mat-icon>home</mat-icon>
+    <span>Welcome</span>
+  </ng-container>
+
+  <span class="spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with logout icon"
+    (click)="logout()"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

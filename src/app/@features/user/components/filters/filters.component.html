@@ -1,0 +1,33 @@
+<div class="row">
+  <mat-form-field appearance="fill" class="col-md-4">
+    <mat-label>Categories</mat-label>
+    <mat-select (selectionChange)="selectCategory($event)" multiple>
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="col-md-4">
+    <mat-label>Rate</mat-label>
+    <mat-select (selectionChange)="selectRate($event)" multiple>
+      <mat-option *ngFor="let rate of rates" [value]="rate">
+        {{ rate }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="col-md-4">
+    <mat-label>Price Range</mat-label>
+    <input class="hidden" matInput type="number" />
+    <mat-slider
+      [min]="priceMin"
+      [max]="priceMax"
+    >
+    <!-- (change)="selectRange($event)" -->
+      <input [value]="priceMin" (change)="selectRangeFrom($event)" matSliderStartThumb />
+      <input [value]="priceMax" (change)="selectRangeTo($event)" matSliderEndThumb />
+    </mat-slider>
+  </mat-form-field>
+
+</div>

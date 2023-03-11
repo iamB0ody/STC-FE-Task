@@ -10,9 +10,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { BarRatingModule } from "ngx-bar-rating";
+import { NoDataComponent } from '../../components/no-data/no-data.component';
 
 
-const importAndExportComponents = [HeaderComponent]
+const importAndExportComponents = [HeaderComponent, NoDataComponent]
 
 const importAndExportModule = [
   CommonModule,

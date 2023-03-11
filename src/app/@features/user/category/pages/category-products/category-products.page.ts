@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/@shared/interfaces/product/product.interface';
-import { CategoriesService } from 'src/app/@shared/services/categories/categories.service';
 import { ProductsService } from 'src/app/@shared/services/products/products.service';
 
 @Component({
@@ -16,8 +15,7 @@ export class CategoryProductsPage {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private productsService: ProductsService,
-    private categoriesService: CategoriesService
+    private productsService: ProductsService
   ) {
     this.handleRouter();
   }

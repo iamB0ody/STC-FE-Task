@@ -1,0 +1,23 @@
+:host {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  mat-form-field {
+    // margin-inline-end: 15px;
+    min-height: 125px;
+    mat-slider {
+      width: 100%;
+      margin: 20px 0 0 0;
+    }
+    ::ng-deep {
+      .mat-mdc-text-field-wrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  }
+
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Filters } from 'src/app/@shared/interfaces/filters/filters.interface';
 import { Product } from 'src/app/@shared/interfaces/product/product.interface';
 import { ProductsService } from 'src/app/@shared/services/products/products.service';
 
@@ -11,7 +12,7 @@ export class HomePage {
   products: Product[] = [];
 
   constructor(private productsService: ProductsService) {
-    this.getProducts()
+    this.getProducts();
   }
 
   getProducts() {

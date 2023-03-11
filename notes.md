@@ -1,28 +1,26 @@
 ✅ - Basic e-commerce store web app
 ✅ - Angular application
 
-🧑‍💻 - Basic login form
-🧑‍💻 -- Static login users
-🧑‍💻 -- 2 roles (User - Admin)
-🧑‍💻 -- username & password
-🧑‍💻 -- For user (user-user)
-🧑‍💻 -- For admin (admin-admin)
+✅ - Basic login form
+✅ -- Static login users
+✅ -- 2 roles (User - Admin)
+✅ -- username & password
+✅ -- For user (user-user)
+✅ -- For admin (admin-admin)
 
-🧑‍💻 - Home
-🧑‍💻 -- Guard for navigation
-🧑‍💻 -- Admin
-🧑‍💻 --- Table for all products (paginated)
-🧑‍💻 --- Add new product
-🧑‍💻 --- Edit product
-🧑‍💻 --- delete product
-🧑‍💻 -- Categories
-🧑‍💻 -- Products
+✅ - Home
+✅ -- Guard for navigation
+✅ -- Admin
+✅ --- Table for all products (paginated)
+✅ --- Add new product
+✅ --- Edit product
+✅ --- delete product
 🧑‍💻 -- User
 🧑‍💻 --- Show categories
 🧑‍💻 --- under each category show the avilable products
 🧑‍💻 --- Filters section
 🧑‍💻 --- Add loading
-🧑‍💻 --- Changeing the products list with animation
+✅ --- Changeing the products list with animation
 🧑‍💻 --- Show full data for every product card
 
 ✅ -- Last angular version

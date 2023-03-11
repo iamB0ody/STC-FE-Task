@@ -1,10 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../node_modules/ngx-bar-rating/themes/br-default-theme';
-// /Users/iamb0ody/Desktop/mine/STC-FE-Task/node_modules/ngx-bar-rating/themes/br-default-theme.scss
+@import "../node_modules/ngx-bar-rating/themes/br-default-theme";
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600&display=swap");
+@import "./assets/ar/ar.scss";
+html,
+body {
+  height: 100%;
+}
 
+body {
+  margin: 0;
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Cairo', sans-serif;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1, h2, h3, h4, h5, h6, button, input, ul, li, mat-error {
+  font-family: 'Cairo', sans-serif !important;
+  letter-spacing: unset !important;
+}
 
 .spacer {
   flex: 1 1 auto;

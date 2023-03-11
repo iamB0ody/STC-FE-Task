@@ -27,7 +27,7 @@ const importAndExportModule = [
 
 @NgModule({
   declarations: [...importAndExportComponents],
-  imports: [...importAndExportModule],
+  imports: [...importAndExportModule, TranslateModule],
   exports: [...importAndExportModule, ...importAndExportComponents, TranslateModule],
   providers: [
     {

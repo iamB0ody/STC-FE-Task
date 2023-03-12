@@ -29,7 +29,7 @@
 ✅ -- Impressive user interface
 ✅ -- Responsive design
 ✅ -- Localization (Ar - En)
-🧑‍💻 -- State management
+✅ -- State management
 ✅ -- APIs -> https://fakestoreapi.com/
 ✅ -- imple, clear, readable code
 🧑‍💻 -- Server worker’s feature

@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { enterAnimation } from 'src/app/@shared/animations/enter.animation';
+import { rowsAnimation } from 'src/app/@shared/animations/row.animation';
 import { Filters } from 'src/app/@shared/interfaces/filters/filters.interface';
 import { Product } from 'src/app/@shared/interfaces/product/product.interface';
 
@@ -6,6 +8,7 @@ import { Product } from 'src/app/@shared/interfaces/product/product.interface';
   selector: 'app-products-with-filters',
   templateUrl: './products-with-filters.component.html',
   styleUrls: ['./products-with-filters.component.scss'],
+  animations: [enterAnimation]
 })
 export class ProductsWithFiltersComponent {
   @Input() loading: boolean = false;

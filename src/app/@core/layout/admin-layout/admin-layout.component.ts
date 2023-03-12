@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth/auth.service';
+import { Store } from '@ngrx/store';
+import { Product } from 'src/app/@shared/interfaces/product/product.interface';
+import { getProductsAction } from 'src/app/@store/actions/products.actions';
 
 @Component({
   selector: 'app-admin-layout',
@@ -7,4 +9,11 @@ import { AuthService } from '../../services/auth/auth.service';
   styleUrls: ['./admin-layout.component.scss']
 })
 export class AdminLayoutComponent {
+  constructor(
+    private store: Store<{ products: Product[] }>
+  ) {}
+
+  ngOnInit(): void {
+    this.store.dispatch(getProductsAction())
+  }
 }

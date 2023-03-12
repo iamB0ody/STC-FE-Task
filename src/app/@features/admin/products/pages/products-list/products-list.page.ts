@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable, Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/@core/services/language/language.service';
 import { enterAnimation } from 'src/app/@shared/animations/enter.animation';
 import { rowsAnimation } from 'src/app/@shared/animations/row.animation';
@@ -29,13 +31,21 @@ export class ProductsListPage {
   dataSource = new MatTableDataSource<Product>([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  productsObservable$!: Observable<Product[]>;
+  productsObservableSubscription$!: Subscription;
+
   constructor(
     private productsService: ProductsService,
     private router: Router,
     private snackBar: MatSnackBar,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private store: Store<{ products: Product[] }>
   ) {
-    this.getProducts();
+    this.productsObservable$ = this.store.select('products');
+  }
+
+  ngOnInit(): void {
+    this.getProducts()
   }
 
   ngAfterViewInit() {
@@ -43,10 +53,10 @@ export class ProductsListPage {
   }
 
   getProducts() {
-    this.productsService.getAll().subscribe({
+    this.productsObservableSubscription$ = this.productsObservable$.subscribe({
       next: (rsp: Product[]) => {
         this.dataSource.data = rsp;
-      },
+      }
     });
   }
 

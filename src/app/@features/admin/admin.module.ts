@@ -3,12 +3,10 @@ import { AdminLayoutComponent } from 'src/app/@core/layout/admin-layout/admin-la
 import { SharedModule } from 'src/app/@shared/modules/shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
 
-
-
 @NgModule({
   declarations: [AdminLayoutComponent],
-  imports: [SharedModule, AdminRoutingModule]
+  imports: [SharedModule, AdminRoutingModule],
 })
 export class AdminModule {
-
+  constructor() {}
 }

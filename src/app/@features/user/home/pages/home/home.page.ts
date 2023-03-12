@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Filters } from 'src/app/@shared/interfaces/filters/filters.interface';
+import { Store } from '@ngrx/store';
+import { Observable, Subscription } from 'rxjs';
 import { Product } from 'src/app/@shared/interfaces/product/product.interface';
-import { ProductsService } from 'src/app/@shared/services/products/products.service';
 
 @Component({
   selector: 'app-home',
@@ -12,17 +12,26 @@ export class HomePage {
   products: Product[] = [];
   loading: boolean = false;
 
-  constructor(private productsService: ProductsService) {
+  productsObservable$!: Observable<Product[]>;
+  productsObservableSubscription$!: Subscription;
+
+  constructor(
+    private store: Store<{ products: Product[] }>
+  ) {
+    this.productsObservable$ = this.store.select('products');
+  }
+
+  ngOnInit(): void {
     this.getProducts();
   }
 
   getProducts() {
     this.loading = true;
-    this.productsService.getAll().subscribe({
-      next: (rsp) => {
+    this.productsObservableSubscription$ = this.productsObservable$.subscribe({
+      next: (rsp: Product[]) => {
         this.products = rsp;
         this.loading = false;
-      },
+      }
     });
   }
 }
